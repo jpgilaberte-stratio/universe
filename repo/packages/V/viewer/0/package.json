@@ -1,0 +1,25 @@
+{
+  "packagingVersion": "2.0",
+  "scm": "https://github.com/stratio/viewer.git",
+  "postInstallNotes": "post install notes",
+  "maintainer": "support@mesosphere.io",
+  "name": "viewer",
+  "tags": [
+    "viewer",
+    "mapreduce",
+    "batch",
+    "analytics"
+  ],
+  "framework": true,
+  "version": "0.15.0",
+  "postUninstallNotes": "post install",
+  "preInstallNotes": "pre install notes ",
+  "licenses": [
+    {
+      "url": "https://raw.githubusercontent.com/apache/spark/master/LICENSE",
+      "name": "Apache License Version 2.0"
+    }
+  ],
+  "description": "aaaaaaaaa",
+  "selected": true
+}

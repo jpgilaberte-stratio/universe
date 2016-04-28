@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "mesos": {
+      "description": "Mesos specific configuration properties",
+      "type": "object",
+      "properties": {
+        "master": {
+          "default": "mesos://zk://master.mesos:2181/mesos",
+          "description": "The URL of the Mesos master. The format is a comma-delimited list of hosts like zk://host1:port,host2:port/mesos. If using ZooKeeper, pay particular attention to the leading zk:// and trailing /mesos! If not using ZooKeeper, standard host:port patterns, like localhost:5050 or 10.0.0.5:5050,10.0.0.6:5050, are also acceptable.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "master"
+      ]
+    },
+    "viewer": {
+      "description": "Awesome dasborading tool",
+      "type": "object",
+      "properties": {
+        "framework-name": {
+            "description": "Awesome dasborading tool",
+            "type": "string",
+            "default": "viewer"
+        },
+        "adminurl": {
+          "type": "string",
+          "description": "The host that the Spark cluster dispatcher will register under.",
+          "default": "aaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "cpus": {
+          "default": 1,
+          "description": "CPU shares to allocate to each Marathon instance.",
+          "minimum": 0.0,
+          "type": "number"
+        },
+        "instances": {
+          "default": 1,
+          "description": "Number of Marathon instances to run.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "mem": {
+          "default": 2048.0,
+          "description": "Memory (MB) to allocate to each Marathon task.",
+          "minimum": 2048.0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "cpus",
+        "framework-name",
+        "instances",
+        "mem"
+      ]
+    }
+  },
+  "required": [
+  	"mesos",
+    "viewer"
+  ]
+}

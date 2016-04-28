@@ -1,0 +1,35 @@
+{
+  "id": "{{viewer.framework-name}}",
+  "cpus": {{viewer.cpus}},
+  "mem": {{viewer.mem}},
+  "instances": {{viewer.instances}},
+  "cmd": "service viewer start",
+  "uris": [
+    "{{resource.assets.uris.log4j-properties}}"
+  ],
+  "ports": [
+    0,
+    0
+  ],
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "{{resource.assets.container.docker.23b1cfe8e04a}}"
+    }
+  },
+  "healthChecks": [
+    {
+      "path": "/",
+      "portIndex": 1,
+      "protocol": "HTTP",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 10,
+      "maxConsecutiveFailures": 3
+    }
+  ],
+  "labels": {
+    "DCOS_PACKAGE_FRAMEWORK_NAME": "{{viewer.framework-name}}"
+  }
+}
+
